@@ -5,7 +5,7 @@ export default function CurrentWeather() {
   let weatherData = {
     city: "London",
     country: "GB",
-    currentTimeDate: "12:08 Sunday 24 July 2022",
+    currentTimeDate: "18:06 Monday 08 August 2022",
     description: "Sunny",
     temp: 25,
     wind: 10,
