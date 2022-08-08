@@ -1,0 +1,18 @@
+.card {
+  opacity: 0.8;
+  border-style: hidden;
+}
+.five-day {
+  font-size: 12pt;
+  margin-top: 15px;
+}
+.forecast-unit-high,
+.forecast-unit-low {
+  font-size: 12px;
+}
+.day-label {
+  font-size: 14pt;
+}
+.daily-card {
+  margin-top: 15px;
+}

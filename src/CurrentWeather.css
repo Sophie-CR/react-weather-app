@@ -1,0 +1,51 @@
+.card {
+  opacity: 0.8;
+  border-style: hidden;
+}
+.current-card {
+  margin-top: 30px;
+}
+.current-time-date {
+  font-size: 20px;
+}
+.description::first-letter {
+  text-transform: capitalize;
+}
+.description {
+  font-size: 24px;
+}
+.current-weather {
+  font-size: 30pt;
+  min-width: 220px;
+}
+.celsius-fahrenheit {
+  position: relative;
+  font-size: 16pt;
+  top: -13px;
+}
+.hidden {
+  color: #000;
+  cursor: default;
+  text-decoration: none;
+}
+.hidden:hover {
+  color: #000;
+  text-decoration: none;
+}
+.details {
+  min-width: 220px;
+}
+ul {
+  font-size: 16pt;
+  list-style: none;
+  padding: 0;
+  margin-top: 6px;
+  margin-bottom: 53px;
+  margin-left: 5px;
+}
+li {
+  margin-bottom: 38px;
+}
+.current-unit {
+  font-size: 16px;
+}
