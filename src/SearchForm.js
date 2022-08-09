@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SearchForm.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
 const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
 let unit = "metric";
 
@@ -11,9 +12,9 @@ export default function SearchForm() {
     setWeatherData({
       loaded: true,
       city: response.data.name,
-      currentTimeDate: "17:54 Tuesday 09 August 2022",
+      currentTimeDate: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: `http://openweathermap.org/img/wn/04d@2x.png`,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temp: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
@@ -60,7 +61,7 @@ export default function SearchForm() {
                   <span className="current-city">{weatherData.city}</span>
                 </h2>
                 <h5 className="current-time-date">
-                  {weatherData.currentTimeDate}
+                  <FormattedDate date={weatherData.currentTimeDate} />
                 </h5>
                 <h6 className="description">{weatherData.description}</h6>
                 <p className="current-weather">
