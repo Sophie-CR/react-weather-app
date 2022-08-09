@@ -2,7 +2,7 @@ import "./App.css";
 import SearchForm from "./SearchForm";
 import CurrentWeather from "./CurrentWeather";
 import DailyForecast from "./DailyForecast";
-import OpenSource from "./OpenSource";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <SearchForm />
         <CurrentWeather />
         <DailyForecast />
-        <OpenSource />
+        <Footer />
       </div>
     </div>
   );
