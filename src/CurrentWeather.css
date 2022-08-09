@@ -12,7 +12,7 @@
   text-transform: capitalize;
 }
 .description {
-  font-size: 24px;
+  font-size: 22pt;
 }
 .current-weather {
   font-size: 30pt;
@@ -47,5 +47,5 @@ li {
   margin-bottom: 38px;
 }
 .current-unit {
-  font-size: 16px;
+  font-size: 14pt;
 }

@@ -8,7 +8,7 @@ export default function SearchForm() {
         <div className="col-sm-4 location-element search">
           <input
             className="search-input form-control"
-            type="text"
+            type="search"
             aria-describedby="Enter Location"
             placeholder="Enter a location"
             autoFocus="on"
@@ -17,13 +17,13 @@ export default function SearchForm() {
         <div className="col-sm-2 location-element">
           <input
             type="submit"
-            className="btn btn-success shadow-sm search-btn"
+            className="btn btn-success shadow-sm search-btn w-100"
             value="🔍 Search"
           />
         </div>
         <div className="col-sm-6 location-element">
           <button
-            className="btn btn-primary shadow-sm use-location"
+            className="btn btn-primary shadow-sm use-location w-20"
             type="submit"
           >
             📍 Use My Location
