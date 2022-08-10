@@ -17,9 +17,9 @@ export default function DailyForecast() {
                 ></img>
               </div>
               <div>
-                <span className="forecast-high">{Math.round(28)}</span>°
+                <span className="forecast-high">{Math.round(28)}°</span>
                 <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}</span>°
+                <span className="forecast-low">{Math.round(18)}°</span>
                 <span className="forecast-unit-low">C</span>
               </div>
             </div>
@@ -37,9 +37,9 @@ export default function DailyForecast() {
                 ></img>
               </div>
               <div>
-                <span className="forecast-high">{Math.round(28)}</span>°
+                <span className="forecast-high">{Math.round(28)}°</span>
                 <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}</span>°
+                <span className="forecast-low">{Math.round(18)}°</span>
                 <span className="forecast-unit-low">C</span>
               </div>
             </div>
@@ -57,9 +57,9 @@ export default function DailyForecast() {
                 ></img>
               </div>
               <div>
-                <span className="forecast-high">{Math.round(28)}</span>°
+                <span className="forecast-high">{Math.round(28)}°</span>
                 <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}</span>°
+                <span className="forecast-low">{Math.round(18)}°</span>
                 <span className="forecast-unit-low">C</span>
               </div>
             </div>
@@ -77,9 +77,9 @@ export default function DailyForecast() {
                 ></img>
               </div>
               <div>
-                <span className="forecast-high">{Math.round(28)}</span>°
+                <span className="forecast-high">{Math.round(28)}°</span>
                 <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}</span>°
+                <span className="forecast-low">{Math.round(18)}°</span>
                 <span className="forecast-unit-low">C</span>
               </div>
             </div>
@@ -97,9 +97,9 @@ export default function DailyForecast() {
                 ></img>
               </div>
               <div>
-                <span className="forecast-high">{Math.round(28)}</span>°
+                <span className="forecast-high">{Math.round(28)}°</span>
                 <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}</span>°
+                <span className="forecast-low">{Math.round(18)}°</span>
                 <span className="forecast-unit-low">C</span>
               </div>
             </div>

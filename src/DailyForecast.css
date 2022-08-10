@@ -10,6 +10,10 @@
 .forecast-unit-low {
   font-size: 12px;
 }
+.forecast-high,
+.forecast-unit-high {
+  font-weight: 600;
+}
 .day-label {
   font-size: 14pt;
 }

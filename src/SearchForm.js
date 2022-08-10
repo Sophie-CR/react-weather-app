@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SearchForm.css";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
+import DailyForecast from "./DailyForecast";
 
 const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
 let unit = "metric";
@@ -68,6 +69,7 @@ export default function SearchForm(props) {
           </div>
         </form>
         <CurrentWeather data={weatherData} />
+        <DailyForecast />
       </div>
     );
   } else {
