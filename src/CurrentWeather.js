@@ -1,6 +1,7 @@
 import React from "react";
 import "./CurrentWeather.css";
 import FormattedDate from "./FormattedDate";
+import CurrentTemp from "./CurrentTemp";
 
 export default function CurrentWeather(props) {
   return (
@@ -21,17 +22,7 @@ export default function CurrentWeather(props) {
                 className="icon"
                 alt={props.data.description}
               ></img>
-              <span className="temp float-left">{props.data.temp}</span>
-              <span>° </span>
-              <span className="celsius-fahrenheit float-left">
-                <a href="#/" className="celsius-link hidden">
-                  C
-                </a>{" "}
-                |{" "}
-                <a href="#/" className="fahrenheit-link">
-                  F
-                </a>
-              </span>
+              <CurrentTemp celsius={props.data.temp} />
             </p>
           </div>
         </div>

@@ -23,15 +23,7 @@
   font-size: 16pt;
   top: -13px;
 }
-.hidden {
-  color: #000;
-  cursor: default;
-  text-decoration: none;
-}
-.hidden:hover {
-  color: #000;
-  text-decoration: none;
-}
+
 .details {
   min-width: 220px;
 }
