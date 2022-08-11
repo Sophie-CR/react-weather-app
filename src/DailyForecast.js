@@ -16,9 +16,14 @@ export default function DailyForecast(props) {
     return (
       <div className="five-day forecast">
         <div className="row">
-          <div className="col day">
-            <ForecastDay data={forecast[1]} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index > 0 && index < 6)
+              return (
+                <div className="col day" key={index}>
+                  <ForecastDay data={dailyForecast} />
+                </div>
+              );
+          })}
         </div>
       </div>
     );
