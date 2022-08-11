@@ -1,7 +1,17 @@
+import axios from "axios";
 import React from "react";
 import "./DailyForecast.css";
 
-export default function DailyForecast() {
+export default function DailyForecast(props) {
+  const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
+  let unit = "metric";
+  let latitude = props.coords.lat;
+  let longitude = props.coords.lon;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${unit}&exclude=minutely,hourly&appid=${apiKey}`;
+  function handleResponse(response) {
+    console.log(response.data);
+  }
+  axios.get(apiUrl).then(handleResponse);
   return (
     <div className="five-day forecast">
       <div className="row">

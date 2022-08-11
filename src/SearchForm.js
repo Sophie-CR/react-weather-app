@@ -4,10 +4,9 @@ import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import DailyForecast from "./DailyForecast";
 
-const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
-let unit = "metric";
-
 export default function SearchForm(props) {
+  const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
+  let unit = "metric";
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ loaded: false });
   function handleResponse(response) {
@@ -23,6 +22,7 @@ export default function SearchForm(props) {
       humidity: response.data.main.humidity,
       high: Math.round(response.data.main.temp_max),
       low: Math.round(response.data.main.temp_min),
+      coords: response.data.coord,
     });
   }
   function search() {
@@ -69,7 +69,7 @@ export default function SearchForm(props) {
           </div>
         </form>
         <CurrentWeather data={weatherData} />
-        <DailyForecast />
+        <DailyForecast coords={weatherData.coords} />
       </div>
     );
   } else {
