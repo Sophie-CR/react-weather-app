@@ -1,121 +1,34 @@
+import React, { useState } from "react";
 import axios from "axios";
-import React from "react";
 import "./DailyForecast.css";
+import ForecastDay from "./ForecastDay";
 
 export default function DailyForecast(props) {
-  const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
-  let unit = "metric";
-  let latitude = props.coords.lat;
-  let longitude = props.coords.lon;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${unit}&exclude=minutely,hourly&appid=${apiKey}`;
+  const [loaded, setLoaded] = useState(false);
+  const [forecast, setForecast] = useState(null);
   function handleResponse(response) {
-    console.log(response.data);
+    console.log(response.data.daily);
+    setForecast(response.data.daily);
+    setLoaded(true);
   }
-  axios.get(apiUrl).then(handleResponse);
-  return (
-    <div className="five-day forecast">
-      <div className="row">
-        <div className="col day">
-          <div className="card daily-card">
-            <div className="card-body">
-              <div className="day-label">Monday</div>
-              <div className="day-icon">
-                <img
-                  src="http://openweathermap.org/img/wn/01d@2x.png"
-                  className="icon"
-                  alt="Sunny"
-                ></img>
-              </div>
-              <div>
-                <span className="forecast-high">{Math.round(28)}°</span>
-                <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}°</span>
-                <span className="forecast-unit-low">C</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col day">
-          <div className="card daily-card">
-            <div className="card-body">
-              <div className="day-label">Tuesday</div>
-              <div className="day-icon">
-                <img
-                  src="http://openweathermap.org/img/wn/01d@2x.png"
-                  className="icon"
-                  alt="Sunny"
-                ></img>
-              </div>
-              <div>
-                <span className="forecast-high">{Math.round(28)}°</span>
-                <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}°</span>
-                <span className="forecast-unit-low">C</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col day">
-          <div className="card daily-card">
-            <div className="card-body">
-              <div className="day-label">Wednesday</div>
-              <div className="day-icon">
-                <img
-                  src="http://openweathermap.org/img/wn/01d@2x.png"
-                  className="icon"
-                  alt="Sunny"
-                ></img>
-              </div>
-              <div>
-                <span className="forecast-high">{Math.round(28)}°</span>
-                <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}°</span>
-                <span className="forecast-unit-low">C</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col day">
-          <div className="card daily-card">
-            <div className="card-body">
-              <div className="day-label">Thursday</div>
-              <div className="day-icon">
-                <img
-                  src="http://openweathermap.org/img/wn/01d@2x.png"
-                  className="icon"
-                  alt="Sunny"
-                ></img>
-              </div>
-              <div>
-                <span className="forecast-high">{Math.round(28)}°</span>
-                <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}°</span>
-                <span className="forecast-unit-low">C</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col day">
-          <div className="card daily-card">
-            <div className="card-body">
-              <div className="day-label">Friday</div>
-              <div className="day-icon">
-                <img
-                  src="http://openweathermap.org/img/wn/01d@2x.png"
-                  className="icon"
-                  alt="Sunny"
-                ></img>
-              </div>
-              <div>
-                <span className="forecast-high">{Math.round(28)}°</span>
-                <span className="forecast-unit-high">C</span> /{" "}
-                <span className="forecast-low">{Math.round(18)}°</span>
-                <span className="forecast-unit-low">C</span>
-              </div>
-            </div>
+
+  if (loaded) {
+    return (
+      <div className="five-day forecast">
+        <div className="row">
+          <div className="col day">
+            <ForecastDay data={forecast[1]} />
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
+    let unit = "metric";
+    let latitude = props.coords.lat;
+    let longitude = props.coords.lon;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=${unit}&exclude=minutely,hourly&appid=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+    return "Loading...";
+  }
 }
