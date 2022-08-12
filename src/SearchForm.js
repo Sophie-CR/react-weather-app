@@ -5,8 +5,6 @@ import CurrentWeather from "./CurrentWeather";
 import DailyForecast from "./DailyForecast";
 
 export default function SearchForm(props) {
-  const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
-  let unit = "metric";
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ loaded: false });
   function handleResponse(response) {
@@ -16,7 +14,7 @@ export default function SearchForm(props) {
       city: response.data.name,
       currentTimeDate: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temp: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.main.humidity,
@@ -25,13 +23,15 @@ export default function SearchForm(props) {
       coords: response.data.coord,
     });
   }
-  function search() {
+  function callApi() {
+    const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
+    let unit = "metric";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    callApi();
   }
   function handleCity(event) {
     setCity(event.target.value);
@@ -73,7 +73,7 @@ export default function SearchForm(props) {
       </div>
     );
   } else {
-    search();
+    callApi();
     return "Loading...";
   }
 }

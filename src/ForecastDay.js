@@ -15,7 +15,7 @@ export default function ForecastDay(props) {
     ];
     return days[day];
   }
-  let iconUrl = `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`;
+  let iconUrl = `https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`;
   let iconAlt = `${props.data.weather[0].description}`;
   let maxTemp = `${Math.round(props.data.temp.max)}`;
   let minTemp = `${Math.round(props.data.temp.min)}`;
