@@ -3,6 +3,7 @@ import "./SearchForm.css";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import DailyForecast from "./DailyForecast";
+import HourlyForecast from "./HourlyForecast";
 import Loading from "./Loading";
 
 export default function SearchForm(props) {
@@ -81,6 +82,7 @@ export default function SearchForm(props) {
           </div>
         </form>
         <CurrentWeather data={weatherData} />
+        <HourlyForecast coords={weatherData.coords} />
         <DailyForecast coords={weatherData.coords} />
       </div>
     );
