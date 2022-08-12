@@ -1,0 +1,26 @@
+.card {
+  opacity: 0.8;
+  border-style: hidden;
+  font-size: 12pt;
+  margin-top: 15px;
+}
+.day-label {
+  font-size: 14pt;
+  text-align: center;
+}
+.forecast-icon {
+  display: block;
+  margin: 0 auto;
+  max-block-size: 70px;
+}
+.forecast-unit-high,
+.forecast-unit-low {
+  font-size: 12px;
+}
+.forecast-high,
+.forecast-unit-high {
+  font-weight: 600;
+}
+.temps {
+  text-align: center;
+}

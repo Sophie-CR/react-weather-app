@@ -19,7 +19,7 @@ export default function CurrentWeather(props) {
             <p className="current-weather">
               <img
                 src={props.data.iconUrl}
-                className="icon"
+                className="current-icon"
                 alt={props.data.description}
               ></img>
               <CurrentTemp celsius={props.data.temp} />

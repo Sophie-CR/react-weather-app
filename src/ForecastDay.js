@@ -1,4 +1,5 @@
 import React from "react";
+import "./ForecastDay.css";
 
 export default function ForecastDay(props) {
   function day() {
@@ -20,13 +21,13 @@ export default function ForecastDay(props) {
   let maxTemp = `${Math.round(props.data.temp.max)}`;
   let minTemp = `${Math.round(props.data.temp.min)}`;
   return (
-    <div className="card daily-card">
+    <div className="card">
       <div className="card-body">
         <div className="day-label">{day()}</div>
         <div className="day-icon">
-          <img src={iconUrl} className="icon" alt={iconAlt}></img>
+          <img src={iconUrl} className="forecast-icon" alt={iconAlt}></img>
         </div>
-        <div>
+        <div className="temps">
           <span className="forecast-high">{maxTemp}°</span>
           <span className="forecast-unit-high">C</span> /{" "}
           <span className="forecast-low">{minTemp}°</span>
