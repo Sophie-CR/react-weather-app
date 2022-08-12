@@ -14,7 +14,12 @@ body {
   display: block;
   margin: 0 auto;
   margin-bottom: 30px;
-  max-width: 950;
+  max-width: 950px;
   padding-left: 20px;
   padding-right: 25px;
+}
+@media (max-width: 576px) {
+  .weather-app {
+    max-width: 100%;
+  }
 }
