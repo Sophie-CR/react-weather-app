@@ -6,6 +6,8 @@ import DailyForecast from "./DailyForecast";
 import Loading from "./Loading";
 
 export default function SearchForm(props) {
+  const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
+  let unit = "metric";
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ loaded: false });
   function handleResponse(response) {
@@ -25,8 +27,6 @@ export default function SearchForm(props) {
     });
   }
   function callApi() {
-    const apiKey = "10c6e46bee088157ebfe63ac8c22ea67";
-    let unit = "metric";
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -36,6 +36,16 @@ export default function SearchForm(props) {
   }
   function handleCity(event) {
     setCity(event.target.value);
+  }
+  function userLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(useMyLocation);
+  }
+  function useMyLocation(position) {
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiGeoWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+    axios.get(`${apiGeoWeatherUrl}&appid=${apiKey}`).then(handleResponse);
   }
   if (weatherData.loaded) {
     return (
@@ -61,6 +71,7 @@ export default function SearchForm(props) {
             </div>
             <div className="col-sm-6 location-element">
               <button
+                onClick={userLocation}
                 className="btn btn-primary shadow-sm use-location w-20"
                 type="submit"
               >
