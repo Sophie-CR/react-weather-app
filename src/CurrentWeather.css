@@ -17,6 +17,7 @@
 .current-weather {
   font-size: 30pt;
   min-width: 220px;
+  margin-top: 15px;
 }
 .celsius-fahrenheit {
   position: relative;
