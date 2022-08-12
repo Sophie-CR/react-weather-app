@@ -3,6 +3,7 @@ import "./SearchForm.css";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import DailyForecast from "./DailyForecast";
+import Loading from "./Loading";
 
 export default function SearchForm(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -74,6 +75,6 @@ export default function SearchForm(props) {
     );
   } else {
     callApi();
-    return "Loading...";
+    return <Loading />;
   }
 }

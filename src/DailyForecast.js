@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DailyForecast.css";
 import ForecastDay from "./ForecastDay";
+import Loading from "./Loading";
 
 export default function DailyForecast(props) {
   const [loaded, setLoaded] = useState(false);
@@ -43,6 +44,6 @@ export default function DailyForecast(props) {
     );
   } else {
     callApi();
-    return "Loading...";
+    return <Loading />;
   }
 }
