@@ -1,7 +1,17 @@
 .footer {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  align-items: center;
+  margin: 15px 0px;
 }
 .footer-link {
-  color: #113f67;
+  color: var(--dark-color);
+}
+.react-logo {
+  color: var(--dark-color);
+  font-size: 39pt;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .react-logo-container {
+    display: none;
+  }
 }

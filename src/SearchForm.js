@@ -50,7 +50,7 @@ export default function SearchForm(props) {
   }
   if (weatherData.loaded) {
     return (
-      <div className="SearchForm">
+      <div className="SearchForm mb-4">
         <form className="form container" onSubmit={handleSubmit}>
           <div className="row location">
             <div className="col-sm-4 location-element search">

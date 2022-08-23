@@ -1,25 +1,36 @@
 body {
   background-color: #f7f9fd;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
-.weather-app {
+.weather-app,
+.footer-container {
   background: linear-gradient(
     91.3deg,
     rgb(135, 174, 220) 1.5%,
     rgb(240, 240, 250) 100.3%
   );
-  border: solid 1px #113f67;
+  border: solid 1px var(--dark-color);
   border-radius: 5px;
   display: block;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   max-width: 950px;
   padding-left: 20px;
   padding-right: 25px;
 }
+.sr-logo {
+  border-radius: 100px;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  max-width: 100%;
+  width: 350px;
+}
 @media (max-width: 576px) {
-  .weather-app {
+  .weather-app,
+  .footer {
     max-width: 100%;
   }
 }
